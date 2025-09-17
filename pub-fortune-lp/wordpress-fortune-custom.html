@@ -1,0 +1,1562 @@
+<!-- WordPress カスタムHTML用 - 無料占い診断サービス -->
+<!-- パブリックスタンド運営・ベースカラー: #eb3474 -->
+
+<style>
+/* Reset & Base Styles */
+.mystic-fortune * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mystic-fortune {
+    --primary-color: #eb3474;
+    --primary-light: #ff6b9d;
+    --primary-dark: #c41e3a;
+    --secondary-color: #2c1810;
+    --accent-gold: #ffd700;
+    --accent-purple: #9b59b6;
+    --accent-blue: #3498db;
+    --text-dark: #333;
+    --text-light: #666;
+    --background-light: #fafafa;
+    --background-dark: #1a1a1a;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(235, 52, 116, 0.3);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.mystic-fortune .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+.mystic-fortune .header {
+    position: relative;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    margin-bottom: 0;
+}
+
+.mystic-fortune .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mystic-fortune .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.mystic-fortune .logo i {
+    font-size: 1.8rem;
+    color: var(--accent-purple);
+}
+
+.mystic-fortune .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+}
+
+.mystic-fortune .nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.mystic-fortune .nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.mystic-fortune .hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-purple) 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.mystic-fortune .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="1"/></g></svg>');
+    animation: sparkle 20s linear infinite;
+}
+
+@keyframes sparkle {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-60px) rotate(360deg); }
+}
+
+.mystic-fortune .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.mystic-fortune .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.mystic-fortune .title-main {
+    display: block;
+    font-size: 3.5rem;
+}
+
+.mystic-fortune .title-sub {
+    display: block;
+    font-size: 2rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+.mystic-fortune .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.mystic-fortune .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.mystic-fortune .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.mystic-fortune .btn-primary {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border-color: var(--white);
+}
+
+.mystic-fortune .btn-primary:hover {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+    transform: translateY(-2px);
+}
+
+.mystic-fortune .btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.mystic-fortune .btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Graphic */
+.mystic-fortune .hero-graphic {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.mystic-fortune .crystal-ball {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    border-radius: 50%;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.mystic-fortune .crystal-ball:hover {
+    transform: scale(1.05);
+}
+
+.mystic-fortune .crystal-shine {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+.mystic-fortune .crystal-text {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-purple);
+    z-index: 1;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Section Styles */
+.mystic-fortune section {
+    padding: 5rem 0;
+}
+
+.mystic-fortune .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.mystic-fortune .section-title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.mystic-fortune .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-purple));
+    border-radius: 2px;
+}
+
+.mystic-fortune .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+/* About Section */
+.mystic-fortune .about {
+    background-color: var(--background-light);
+}
+
+.mystic-fortune .about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mystic-fortune .about-text h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.mystic-fortune .about-text > p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.mystic-fortune .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.mystic-fortune .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.mystic-fortune .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.mystic-fortune .feature i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    min-width: 60px;
+}
+
+.mystic-fortune .feature h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Services Section */
+.mystic-fortune .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.mystic-fortune .service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.mystic-fortune .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.mystic-fortune .service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-purple));
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.mystic-fortune .service-icon i {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.mystic-fortune .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.mystic-fortune .service-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.mystic-fortune .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-purple);
+    background: var(--background-light);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.mystic-fortune .fortune-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.mystic-fortune .fortune-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Horoscope Section */
+.mystic-fortune .horoscope {
+    background-color: var(--background-light);
+}
+
+.mystic-fortune .zodiac-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.mystic-fortune .zodiac-card {
+    background: var(--white);
+    padding: 2rem 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.mystic-fortune .zodiac-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.mystic-fortune .zodiac-card i {
+    font-size: 2.5rem;
+    color: var(--accent-purple);
+    margin-bottom: 1rem;
+}
+
+.mystic-fortune .zodiac-card h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.mystic-fortune .zodiac-card span {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Fortune Modal */
+.mystic-fortune .fortune-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.mystic-fortune .modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 0;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.mystic-fortune .close {
+    color: var(--text-light);
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 10;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mystic-fortune .close:hover {
+    color: var(--primary-color);
+}
+
+.mystic-fortune .fortune-form {
+    padding: 3rem 2rem 2rem;
+}
+
+.mystic-fortune .fortune-form h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.mystic-fortune .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.mystic-fortune .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.mystic-fortune .form-group input,
+.mystic-fortune .form-group select,
+.mystic-fortune .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e1e1;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.mystic-fortune .form-group input:focus,
+.mystic-fortune .form-group select:focus,
+.mystic-fortune .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(235, 52, 116, 0.1);
+}
+
+/* Tarot Cards */
+.mystic-fortune .tarot-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.mystic-fortune .tarot-card {
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--accent-purple), var(--primary-color));
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.mystic-fortune .tarot-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(235, 52, 116, 0.4);
+}
+
+.mystic-fortune .tarot-card.selected {
+    transform: translateY(-15px) scale(1.1);
+    box-shadow: 0 15px 35px rgba(235, 52, 116, 0.6);
+    border: 3px solid var(--accent-gold);
+}
+
+.mystic-fortune .card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+/* Fortune Results */
+.mystic-fortune .fortune-result {
+    padding: 2rem;
+}
+
+.mystic-fortune .fortune-result h3 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.mystic-fortune .revealed-card {
+    background: linear-gradient(135deg, var(--accent-purple), var(--primary-color));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.mystic-fortune .reading-result {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+}
+
+.mystic-fortune .fortune-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mystic-fortune .quick-fortune {
+    text-align: center;
+    padding: 2rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+}
+
+/* Contact Section */
+.mystic-fortune .contact {
+    background-color: var(--background-light);
+}
+
+.mystic-fortune .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mystic-fortune .contact-info h3,
+.mystic-fortune .contact-form h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.mystic-fortune .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.mystic-fortune .info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 0.2rem;
+    min-width: 25px;
+}
+
+.mystic-fortune .contact-form {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* Footer */
+.mystic-fortune .footer {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+.mystic-fortune .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.mystic-fortune .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.mystic-fortune .footer-logo i {
+    color: var(--accent-purple);
+    font-size: 1.8rem;
+}
+
+.mystic-fortune .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mystic-fortune .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .mystic-fortune .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .mystic-fortune .title-main {
+        font-size: 2.5rem;
+    }
+
+    .mystic-fortune .title-sub {
+        font-size: 1.5rem;
+    }
+
+    .mystic-fortune .section-title {
+        font-size: 2.5rem;
+    }
+
+    .mystic-fortune .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .mystic-fortune .tarot-cards {
+        justify-content: center;
+    }
+
+    .mystic-fortune .nav-menu {
+        display: none;
+    }
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="mystic-fortune">
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-crystal-ball"></i>
+                    <span>Mystic Fortune</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#about">占いについて</a></li>
+                    <li><a href="#services">占い診断</a></li>
+                    <li><a href="#horoscope">今日の運勢</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-main">無料で占い診断</span>
+                    <span class="title-sub">あなたの未来を占います</span>
+                </h1>
+                <p class="hero-description">
+                    パブリックスタンドが運営する本格占いサービス。<br>
+                    タロット、星座、数秘術など多彩な占いが完全無料でお楽しみいただけます。
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">今すぐ占う</a>
+                    <a href="#about" class="btn btn-secondary">占いについて</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <div class="crystal-ball" onclick="showQuickFortune()">
+                        <div class="crystal-shine"></div>
+                        <div class="crystal-text">クリックして<br>今日の運勢</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">占いについて</h2>
+                <p class="section-subtitle">本格的な占いを無料で体験</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>パブリックスタンドが提供する占いサービス</h3>
+                    <p>
+                        私たちは長年の経験と実績を持つ占い師の監修のもと、
+                        本格的な占い診断をオンラインで無料提供しています。
+                        あなたの人生をより良い方向へ導くお手伝いをいたします。
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-gift"></i>
+                            <div>
+                                <h4>完全無料</h4>
+                                <p>すべての占い診断が無料でご利用いただけます</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>24時間対応</h4>
+                                <p>いつでもお好きな時間に占い診断が可能</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>プライバシー保護</h4>
+                                <p>個人情報は一切収集せず、安心してご利用いただけます</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">占い診断</h2>
+                <p class="section-subtitle">お好きな占いをお選びください</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="startFortune('tarot')">
+                    <div class="service-icon">
+                        <i class="fas fa-tarot"></i>
+                    </div>
+                    <h3>タロット占い</h3>
+                    <p>78枚のカードが示すメッセージから、あなたの現在・過去・未来を詳しく読み解きます。</p>
+                    <div class="price">無料</div>
+                    <button class="fortune-btn">診断開始</button>
+                </div>
+
+                <div class="service-card" onclick="startFortune('astrology')">
+                    <div class="service-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>星座占い</h3>
+                    <p>あなたの星座と今日の星の配置から、恋愛・仕事・健康運を詳しくお伝えします。</p>
+                    <div class="price">無料</div>
+                    <button class="fortune-btn">診断開始</button>
+                </div>
+                <div class="service-card" onclick="startFortune('numerology')">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>数秘術診断</h3>
+                    <p>生年月日から算出する運命数であなたの性格・才能・人生の課題を明らかにします。</p>
+                    <div class="price">無料</div>
+                    <button class="fortune-btn">診断開始</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horoscope Section -->
+    <section id="horoscope" class="horoscope">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">今日の運勢</h2>
+                <p class="section-subtitle">星座別の今日の運勢をチェック</p>
+            </div>
+            <div class="zodiac-grid">
+                <div class="zodiac-card" onclick="showZodiacFortune('aries')">
+                    <i class="fas fa-fire"></i>
+                    <h4>牡羊座</h4>
+                    <span>3/21-4/19</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('taurus')">
+                    <i class="fas fa-leaf"></i>
+                    <h4>牡牛座</h4>
+                    <span>4/20-5/20</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('gemini')">
+                    <i class="fas fa-wind"></i>
+                    <h4>双子座</h4>
+                    <span>5/21-6/21</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('cancer')">
+                    <i class="fas fa-water"></i>
+                    <h4>蟹座</h4>
+                    <span>6/22-7/22</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('leo')">
+                    <i class="fas fa-sun"></i>
+                    <h4>獅子座</h4>
+                    <span>7/23-8/22</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('virgo')">
+                    <i class="fas fa-seedling"></i>
+                    <h4>乙女座</h4>
+                    <span>8/23-9/22</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('libra')">
+                    <i class="fas fa-balance-scale"></i>
+                    <h4>天秤座</h4>
+                    <span>9/23-10/23</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('scorpio')">
+                    <i class="fas fa-spider"></i>
+                    <h4>蠍座</h4>
+                    <span>10/24-11/22</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('sagittarius')">
+                    <i class="fas fa-bow-arrow"></i>
+                    <h4>射手座</h4>
+                    <span>11/23-12/21</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('capricorn')">
+                    <i class="fas fa-mountain"></i>
+                    <h4>山羊座</h4>
+                    <span>12/22-1/19</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('aquarius')">
+                    <i class="fas fa-tint"></i>
+                    <h4>水瓶座</h4>
+                    <span>1/20-2/18</span>
+                </div>
+                <div class="zodiac-card" onclick="showZodiacFortune('pisces')">
+                    <i class="fas fa-fish"></i>
+                    <h4>魚座</h4>
+                    <span>2/19-3/20</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fortune Result Modal -->
+    <div id="fortuneModal" class="fortune-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFortune()">&times;</span>
+            <div id="fortuneResult"></div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">お問い合わせ</h2>
+                <p class="section-subtitle">ご質問・ご要望はこちらから</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>運営情報</h3>
+                    <div class="info-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <strong>運営会社</strong>
+                            <p>パブリックスタンド株式会社</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>fortune@publicstand.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>サービス提供時間</strong>
+                            <p>24時間365日<br>いつでもご利用いただけます</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>プライバシー</strong>
+                            <p>個人情報は一切収集いたしません</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>お問い合わせフォーム</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">お名前</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">メールアドレス</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">お問い合わせ内容</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">送信する</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-crystal-ball"></i>
+                    <span>Mystic Fortune</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mystic Fortune by パブリックスタンド. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+// 占いデータベース（簡略版）
+const fortuneData = {
+    tarot: {
+        cards: [
+            { name: "愚者", advice: "新しい始まりの時です。恐れずに一歩踏み出しましょう。", love: "新しい出会いが期待できます。", work: "創造性を活かせる機会が訪れます。" },
+            { name: "魔術師", advice: "あなたの能力を存分に発揮できる時です。", love: "積極的なアプローチが功を奏します。", work: "リーダーシップを発揮する機会です。" },
+            { name: "女教皇", advice: "直感を信じて行動することが重要です。", love: "相手の気持ちを理解することが大切です。", work: "冷静な判断力が求められています。" },
+            { name: "女帝", advice: "創造的な活動で幸運が訪れます。", love: "愛情深い関係が築けます。", work: "チームワークが成功の鍵です。" },
+            { name: "皇帝", advice: "責任感を持って取り組むことで成果が得られます。", love: "安定した関係を築けます。", work: "リーダーとしての資質が評価されます。" }
+        ]
+    },
+    zodiac: {
+        aries: { 
+            name: "牡羊座", 
+            element: "火", 
+            period: "3/21-4/19",
+            dailyAdvice: [
+                "今日は新しいことに挑戦する絶好の日です。積極的な行動が幸運を呼びます。",
+                "エネルギッシュな一日。リーダーシップを発揮して周囲を引っ張りましょう。",
+                "直感を信じて行動することで、予想以上の成果が得られそうです。",
+                "新しい出会いや機会が舞い込む日。アンテナを高く張っておきましょう。",
+                "自分の意見をしっかりと伝えることで、理解者が増えそうです。",
+                "体を動かすことで運気がアップ。スポーツやエクササイズがおすすめです。",
+                "創造性が高まっている日。アイデアを形にしてみましょう。"
+            ],
+            luckyColors: ["赤", "オレンジ", "金", "白", "黄色", "ピンク", "紫"]
+        },
+        taurus: { 
+            name: "牡牛座", 
+            element: "地", 
+            period: "4/20-5/20",
+            dailyAdvice: [
+                "じっくりと物事を進めることで良い結果が得られます。焦りは禁物です。",
+                "美しいものに触れることで心が豊かになる日。アートや音楽を楽しんで。",
+                "五感を大切にした一日を過ごしましょう。美味しいものを味わって。",
+                "安定した環境で力を発揮できる日。いつものペースを大切に。",
+                "丁寧な作業が評価される日。質の高い仕事を心がけましょう。",
+                "自然と触れ合うことで心が癒される日。散歩や園芸がおすすめ。",
+                "忍耐強く取り組むことで、大きな成果が期待できます。"
+            ],
+            luckyColors: ["緑", "ピンク", "茶色", "ベージュ", "青", "白", "黄色"]
+        },
+        gemini: { 
+            name: "双子座", 
+            element: "風", 
+            period: "5/21-6/21",
+            dailyAdvice: [
+                "人との交流が幸運を呼び込みます。積極的にコミュニケーションを取りましょう。",
+                "好奇心旺盛な一日。新しい情報や知識を積極的に取り入れて。",
+                "軽やかな行動が吉。フットワークの軽さが成功のカギです。",
+                "多方面での活動が充実する日。様々なことにチャレンジしてみましょう。",
+                "会話上手が光る日。あなたの話術で場を盛り上げて。",
+                "情報収集に適した日。SNSやニュースから有益な情報をキャッチ。",
+                "変化を恐れずに新しい環境に飛び込んでみましょう。"
+            ],
+            luckyColors: ["黄色", "オレンジ", "青", "緑", "白", "銀", "紫"]
+        },
+        cancer: { 
+            name: "蟹座", 
+            element: "水", 
+            period: "6/22-7/22",
+            dailyAdvice: [
+                "感情を大切にした行動が良い方向に導きます。直感を信じて。",
+                "家族や親しい人との時間を大切にする日。絆が深まりそうです。",
+                "思いやりの心が幸運を招く日。優しさが周囲に伝わります。",
+                "過去の経験が今日の判断に役立ちそう。記憶を辿ってみて。",
+                "居心地の良い空間で過ごすことで心が安らぐ日です。",
+                "母性本能が光る日。困っている人を助けることで運気アップ。",
+                "感受性が豊かになっている日。芸術や文学に触れてみましょう。"
+            ],
+            luckyColors: ["白", "銀", "青", "紫", "ピンク", "緑", "クリーム"]
+        },
+        leo: { 
+            name: "獅子座", 
+            element: "火", 
+            period: "7/23-8/22",
+            dailyAdvice: [
+                "自分らしさを前面に出すことで注目を集められます。堂々と振る舞って。",
+                "クリエイティブな活動が吉。あなたの才能を存分に発揮しましょう。",
+                "リーダーシップが求められる日。積極的に前に出て行きましょう。",
+                "華やかな場所や人との出会いが幸運をもたらします。",
+                "自信を持って行動することで、周囲からの評価が高まります。",
+                "表現力が光る日。プレゼンや発表に最適なタイミングです。",
+                "楽しいことを優先する日。エンターテインメントを満喫して。"
+            ],
+            luckyColors: ["金", "オレンジ", "赤", "黄色", "紫", "白", "ピンク"]
+        },
+        virgo: { 
+            name: "乙女座", 
+            element: "地", 
+            period: "8/23-9/22",
+            dailyAdvice: [
+                "細部への気配りが成功のポイントになります。丁寧な作業を心がけて。",
+                "整理整頓が運気を向上させる日。身の回りを綺麗にしましょう。",
+                "分析力が冴える日。データや情報を詳しく調べてみて。",
+                "健康管理に意識を向ける日。食事や運動に気を配りましょう。",
+                "完璧主義が良い結果をもたらす日。妥協せずに取り組んで。",
+                "他人のサポートに徹することで、信頼関係が築けそうです。",
+                "実用的な知識やスキルを身につけるのに適した日です。"
+            ],
+            luckyColors: ["紺", "グレー", "白", "緑", "茶色", "ベージュ", "青"]
+        },
+        libra: { 
+            name: "天秤座", 
+            element: "風", 
+            period: "9/23-10/23",
+            dailyAdvice: [
+                "調和を重視した判断が良い結果をもたらします。バランス感覚を大切に。",
+                "美的センスが光る日。ファッションやインテリアにこだわってみて。",
+                "パートナーシップが重要な日。協力関係を築くことが成功のカギ。",
+                "公平性を保つことで周囲からの信頼を得られそうです。",
+                "社交性が発揮される日。パーティーや集まりに参加してみて。",
+                "芸術的な活動が吉。美術館やコンサートに足を運んでみましょう。",
+                "優雅な時間を過ごすことで心が豊かになる日です。"
+            ],
+            luckyColors: ["ピンク", "青", "緑", "白", "パステルカラー", "銀", "紫"]
+        },
+        scorpio: { 
+            name: "蠍座", 
+            element: "水", 
+            period: "10/24-11/22",
+            dailyAdvice: [
+                "深く掘り下げることで真実が見えてきます。探究心を大切に。",
+                "集中力が高まる日。一つのことに没頭してみましょう。",
+                "秘密や隠されたものが明らかになる日。真相に迫ってみて。",
+                "変革の時。古いものを手放して新しいスタートを切りましょう。",
+                "直感力が冴える日。第六感を信じて行動してみて。",
+                "深い絆を求める日。表面的な関係より真の友情を大切に。",
+                "研究や調査に向いている日。興味のあることを徹底的に調べて。"
+            ],
+            luckyColors: ["黒", "赤", "紫", "深緑", "茶色", "ワインレッド", "濃紺"]
+        },
+        sagittarius: { 
+            name: "射手座", 
+            element: "火", 
+            period: "11/23-12/21",
+            dailyAdvice: [
+                "広い視野を持って物事を捉えることが大切です。視点を変えてみて。",
+                "冒険心が幸運を呼ぶ日。新しい場所や体験にチャレンジしてみましょう。",
+                "学習意欲が高まる日。新しい知識や技能を身につけてみて。",
+                "自由な発想が評価される日。既成概念にとらわれずに考えて。",
+                "海外や遠方との縁が深まる日。異文化交流を楽しんでみて。",
+                "哲学的な思考が深まる日。人生について考えてみましょう。",
+                "楽観的な姿勢が周囲に良い影響を与える日です。"
+            ],
+            luckyColors: ["青", "紫", "オレンジ", "黄色", "緑", "白", "ターコイズ"]
+        },
+        capricorn: { 
+            name: "山羊座", 
+            element: "地", 
+            period: "12/22-1/19",
+            dailyAdvice: [
+                "着実な努力が大きな成果につながります。継続は力なりです。",
+                "責任感が評価される日。任されたことは確実にこなしましょう。",
+                "長期的な計画を立てるのに適した日。将来のビジョンを描いて。",
+                "伝統や格式を重んじることで信頼を得られそうです。",
+                "実績と経験が物を言う日。これまでの努力が報われそう。",
+                "組織やグループでの活動が充実する日。チームワークを大切に。",
+                "現実的な判断が成功につながる日。夢より現実を重視して。"
+            ],
+            luckyColors: ["黒", "グレー", "茶色", "濃紺", "緑", "白", "銀"]
+        },
+        aquarius: { 
+            name: "水瓶座", 
+            element: "風", 
+            period: "1/20-2/18",
+            dailyAdvice: [
+                "独自のアイデアが評価される時です。斬新な提案をしてみましょう。",
+                "友情が重要な日。仲間との絆を深めることで新しい可能性が開けます。",
+                "革新的な技術や方法に注目する日。最新情報をキャッチして。",
+                "個性を大切にする日。人と違うことを恐れずに自分らしく。",
+                "社会貢献への意識が高まる日。ボランティア活動に参加してみて。",
+                "未来志向の思考が吉。先を見据えた計画を立ててみましょう。",
+                "ネットワークが広がる日。新しい人脈を築いてみて。"
+            ],
+            luckyColors: ["青", "水色", "銀", "白", "紫", "緑", "黄色"]
+        },
+        pisces: { 
+            name: "魚座", 
+            element: "水", 
+            period: "2/19-3/20",
+            dailyAdvice: [
+                "直感と想像力を信じて行動しましょう。感性が冴える日です。",
+                "芸術的な活動が吉。クリエイティブな時間を過ごしてみて。",
+                "共感力が高まる日。他人の気持ちを理解することで絆が深まります。",
+                "スピリチュアルなことに意識を向ける日。瞑想や自然との対話を。",
+                "夢や理想を大切にする日。現実的すぎる考えは一旦置いて。",
+                "感受性が豊かになる日。音楽や詩に心を委ねてみましょう。",
+                "奉仕の精神が幸運を呼ぶ日。困っている人を助けることで運気アップ。"
+            ],
+            luckyColors: ["青", "緑", "紫", "白", "ピンク", "水色", "シルバー"]
+        }
+    }
+};
+
+// グローバル変数
+let selectedCard = null;
+let selectedCategory = null;
+
+// 占い診断開始
+function startFortune(type) {
+    let formHTML = '';
+    
+    switch(type) {
+        case 'tarot':
+            formHTML = `
+                <div class="fortune-form">
+                    <h3><i class="fas fa-tarot"></i> タロット占い</h3>
+                    <p>質問を心の中で思い浮かべながら、カードを選んでください。</p>
+                    <div class="form-group">
+                        <label>占いたい内容を選択してください:</label>
+                        <select id="tarotCategory" required>
+                            <option value="">選択してください</option>
+                            <option value="love">恋愛運</option>
+                            <option value="work">仕事運</option>
+                            <option value="general">総合運</option>
+                        </select>
+                    </div>
+                    <div class="card-selection">
+                        <p>以下から1枚のカードを選んでください:</p>
+                        <div class="tarot-cards">
+                            ${Array.from({length: 5}, (_, i) => 
+                                `<div class="tarot-card" onclick="selectTarotCard(${i})">
+                                    <div class="card-back">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>`
+                            ).join('')}
+                        </div>
+                    </div>
+                    <button onclick="performTarotReading()" class="btn btn-primary" style="display:none;" id="tarotButton">占い結果を見る</button>
+                </div>
+            `;
+            break;
+            
+        case 'astrology':
+            formHTML = `
+                <div class="fortune-form">
+                    <h3><i class="fas fa-moon"></i> 星座占い</h3>
+                    <p>あなたの星座を選択してください:</p>
+                    <div class="form-group">
+                        <select id="zodiacSelect" onchange="performAstrologyReading()" required>
+                            <option value="">星座を選択してください</option>
+                            ${Object.entries(fortuneData.zodiac).map(([key, value]) => 
+                                `<option value="${key}">${value.name}</option>`
+                            ).join('')}
+                        </select>
+                    </div>
+                </div>
+            `;
+            break;
+            
+        default:
+            formHTML = `
+                <div class="fortune-form">
+                    <h3>占い準備中</h3>
+                    <p>この占いは現在準備中です。しばらくお待ちください。</p>
+                    <button onclick="closeFortune()" class="btn btn-primary">閉じる</button>
+                </div>
+            `;
+            break;
+    }
+    
+    document.getElementById('fortuneResult').innerHTML = formHTML;
+    document.getElementById('fortuneModal').style.display = 'block';
+}
+
+// タロットカード選択
+function selectTarotCard(cardIndex) {
+    selectedCard = cardIndex;
+    document.querySelectorAll('.tarot-card').forEach((card, index) => {
+        card.classList.remove('selected');
+        if (index === cardIndex) {
+            card.classList.add('selected');
+        }
+    });
+    
+    const category = document.getElementById('tarotCategory').value;
+    if (category) {
+        selectedCategory = category;
+        document.getElementById('tarotButton').style.display = 'block';
+    }
+}
+
+// タロット占い実行
+function performTarotReading() {
+    if (selectedCard === null || !selectedCategory) {
+        alert('カードと占いたい内容を選択してください。');
+        return;
+    }
+    
+    const card = fortuneData.tarot.cards[selectedCard];
+    const resultHTML = `
+        <div class="fortune-result">
+            <h3><i class="fas fa-tarot"></i> タロット占い結果</h3>
+            <div class="revealed-card">
+                <h4>『${card.name}』</h4>
+            </div>
+            <div class="reading-result">
+                <h4>占い結果:</h4>
+                <p>${card.advice}</p>
+                ${selectedCategory === 'love' ? `<p><strong>恋愛運:</strong> ${card.love}</p>` : ''}
+                ${selectedCategory === 'work' ? `<p><strong>仕事運:</strong> ${card.work}</p>` : ''}
+            </div>
+            <div class="fortune-actions">
+                <button onclick="startFortune('tarot')" class="btn btn-secondary">もう一度占う</button>
+                <button onclick="closeFortune()" class="btn btn-primary">閉じる</button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('fortuneResult').innerHTML = resultHTML;
+}
+
+// 日付ベースのインデックス取得関数
+function getDayOfYear() {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now - start;
+    return Math.floor(diff / (1000 * 60 * 60 * 24));
+}
+
+// 日付ベースのアドバイス選択
+function getDailyAdvice(zodiacSign) {
+    const zodiacInfo = fortuneData.zodiac[zodiacSign];
+    const dayIndex = getDayOfYear() % zodiacInfo.dailyAdvice.length;
+    return zodiacInfo.dailyAdvice[dayIndex];
+}
+
+// 日付ベースのラッキーカラー選択
+function getDailyLuckyColor(zodiacSign) {
+    const zodiacInfo = fortuneData.zodiac[zodiacSign];
+    const dayIndex = getDayOfYear() % zodiacInfo.luckyColors.length;
+    return zodiacInfo.luckyColors[dayIndex];
+}
+
+// 日付ベースのラッキーナンバー生成
+function getDailyLuckyNumber() {
+    const dayOfYear = getDayOfYear();
+    return (dayOfYear % 9) + 1;
+}
+
+// 星座占い実行
+function performAstrologyReading() {
+    const selectedZodiac = document.getElementById('zodiacSelect').value;
+    if (!selectedZodiac) return;
+    
+    const zodiacInfo = fortuneData.zodiac[selectedZodiac];
+    const today = new Date().toLocaleDateString('ja-JP');
+    const dailyAdvice = getDailyAdvice(selectedZodiac);
+    const luckyColor = getDailyLuckyColor(selectedZodiac);
+    const luckyNumber = getDailyLuckyNumber();
+    
+    const resultHTML = `
+        <div class="fortune-result">
+            <h3><i class="fas fa-moon"></i> 星座占い結果</h3>
+            <div class="quick-fortune">
+                <p class="fortune-date">${today}</p>
+                <h4>${zodiacInfo.name}の今日の運勢</h4>
+                <div class="fortune-message">
+                    <p>${dailyAdvice}</p>
+                </div>
+                <div class="lucky-items">
+                    <p><strong>ラッキーカラー:</strong> <span style="color: #eb3474;">${luckyColor}</span></p>
+                    <p><strong>ラッキーナンバー:</strong> ${luckyNumber}</p>
+                </div>
+            </div>
+            <div class="fortune-actions">
+                <button onclick="startFortune('astrology')" class="btn btn-secondary">他の星座も見る</button>
+                <button onclick="closeFortune()" class="btn btn-primary">閉じる</button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('fortuneResult').innerHTML = resultHTML;
+}
+
+// クイック占い
+function showQuickFortune() {
+    const fortunes = [
+        "今日は素晴らしい一日になりそうです。新しい出会いが期待できます。",
+        "直感を信じて行動することで、良い結果が得られるでしょう。",
+        "周囲の人との協力が成功のカギとなります。",
+        "創造性を活かした活動に取り組むと良いでしょう。",
+        "今日は新しいことにチャレンジする絶好の日です。",
+        "感謝の気持ちを忘れずに過ごすことで幸運が訪れます。"
+    ];
+    
+    // 日付ベースで一貫した運勢を選択
+    const dayIndex = getDayOfYear() % fortunes.length;
+    const todaysFortune = fortunes[dayIndex];
+    const today = new Date().toLocaleDateString('ja-JP');
+    const luckyNumber = getDailyLuckyNumber();
+    
+    // 日付ベースのラッキーカラー（全体用）
+    const globalColors = ["ピンク", "青", "緑", "黄色", "紫", "オレンジ", "白"];
+    const colorIndex = getDayOfYear() % globalColors.length;
+    const luckyColor = globalColors[colorIndex];
+    
+    const resultHTML = `
+        <div class="fortune-result">
+            <h3><i class="fas fa-crystal-ball"></i> 今日のあなたの運勢</h3>
+            <div class="quick-fortune">
+                <p class="fortune-date">${today}</p>
+                <div class="fortune-message">
+                    <p>${todaysFortune}</p>
+                </div>
+                <div class="lucky-items">
+                    <p><strong>ラッキーカラー:</strong> <span style="color: #eb3474;">${luckyColor}</span></p>
+                    <p><strong>ラッキーナンバー:</strong> ${luckyNumber}</p>
+                </div>
+            </div>
+            <div class="fortune-actions">
+                <button onclick="startFortune('tarot')" class="btn btn-secondary">詳しく占う</button>
+                <button onclick="closeFortune()" class="btn btn-primary">閉じる</button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('fortuneResult').innerHTML = resultHTML;
+    document.getElementById('fortuneModal').style.display = 'block';
+}
+
+// 星座別今日の運勢
+function showZodiacFortune(sign) {
+    const zodiacInfo = fortuneData.zodiac[sign];
+    const today = new Date().toLocaleDateString('ja-JP');
+    const dailyAdvice = getDailyAdvice(sign);
+    const luckyColor = getDailyLuckyColor(sign);
+    const luckyNumber = getDailyLuckyNumber();
+    
+    const resultHTML = `
+        <div class="fortune-result">
+            <h3><i class="fas fa-star"></i> ${zodiacInfo.name}の今日の運勢</h3>
+            <div class="quick-fortune">
+                <p class="fortune-date">${today}</p>
+                <div class="fortune-message">
+                    <p>${dailyAdvice}</p>
+                </div>
+                <div class="lucky-items">
+                    <p><strong>ラッキーカラー:</strong> <span style="color: #eb3474;">${luckyColor}</span></p>
+                    <p><strong>ラッキーナンバー:</strong> ${luckyNumber}</p>
+                </div>
+            </div>
+            <div class="fortune-actions">
+                <button onclick="startFortune('astrology')" class="btn btn-secondary">詳しい星座占い</button>
+                <button onclick="closeFortune()" class="btn btn-primary">閉じる</button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('fortuneResult').innerHTML = resultHTML;
+    document.getElementById('fortuneModal').style.display = 'block';
+}
+
+// モーダルを閉じる
+function closeFortune() {
+    document.getElementById('fortuneModal').style.display = 'none';
+    selectedCard = null;
+    selectedCategory = null;
+}
+
+// モーダル外クリックで閉じる
+window.onclick = function(event) {
+    const modal = document.getElementById('fortuneModal');
+    if (event.target === modal) {
+        closeFortune();
+    }
+}
+
+// スムーススクロール
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.mystic-fortune a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
+            
+            if (target) {
+                e.preventDefault();
+                const targetPosition = target.offsetTop - 80;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+// フォーム送信処理
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !message) {
+                alert('すべての項目を入力してください。');
+                return;
+            }
+            
+            alert('お問い合わせありがとうございます。\n3営業日以内にご返信いたします。');
+            contactForm.reset();
+        });
+    }
+});
+</script>

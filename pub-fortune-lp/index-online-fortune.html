@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パブリックスタンド運営 - 無料オンライン占い診断</title>
+    <meta name="description" content="パブリックスタンドが運営する無料オンライン占い診断サイト。生年月日や質問に答えるだけで、本格的な占い結果をお届け。恋愛・仕事・健康・金運の運勢をチェック！">
+    <link rel="stylesheet" href="css/online-fortune-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-crystal-ball"></i>
+                    <span>Public Stand Fortune</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#diagnosis">無料診断</a></li>
+                    <li><a href="#services">占い一覧</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-main">無料で占える</span>
+                    <span class="title-sub">あなたの運勢診断</span>
+                </h1>
+                <p class="hero-description">
+                    パブリックスタンド運営の本格占いサイト<br>
+                    生年月日や簡単な質問に答えるだけで、今すぐ無料診断！
+                </p>
+                <div class="hero-buttons">
+                    <a href="#diagnosis" class="btn btn-primary">今すぐ無料診断</a>
+                    <a href="#services" class="btn btn-secondary">占い一覧を見る</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50,000+</div>
+                        <div class="stat-label">診断実績</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">満足度</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">無料</div>
+                        <div class="stat-label">完全無料</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <div class="crystal-ball" id="crystalBall">
+                        <div class="crystal-shine"></div>
+                    </div>
+                    <div class="floating-cards">
+                        <div class="tarot-card card-1">🔮</div>
+                        <div class="tarot-card card-2">⭐</div>
+                        <div class="tarot-card card-3">🌙</div>
+                        <div class="tarot-card card-4">✨</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Diagnosis Section -->
+    <section id="diagnosis" class="quick-diagnosis">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">無料診断スタート</h2>
+                <p class="section-subtitle">簡単3ステップで本格的な占い結果をお届け</p>
+            </div>
+            
+            <div class="diagnosis-steps">
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-title">占いを選択</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-title">情報入力</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-title">結果表示</div>
+                    </div>
+                </div>
+
+                <!-- Step 1: 占い選択 -->
+                <div class="step-content active" id="step1">
+                    <h3>占いの種類を選んでください</h3>
+                    <div class="fortune-types-grid">
+                        <div class="fortune-type" data-type="tarot">
+                            <div class="fortune-icon">
+                                <i class="fas fa-cards-blank"></i>
+                            </div>
+                            <h4>タロット占い</h4>
+                            <p>カードが示すあなたの運命</p>
+                        </div>
+                        <div class="fortune-type" data-type="palm">
+                            <div class="fortune-icon">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <h4>手相占い</h4>
+                            <p>生年月日からあなたの手相を読み解く</p>
+                        </div>
+                        <div class="fortune-type" data-type="astrology">
+                            <div class="fortune-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>星座占い</h4>
+                            <p>星座と生年月日から運勢をチェック</p>
+                        </div>
+                        <div class="fortune-type" data-type="numerology">
+                            <div class="fortune-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4>数秘術</h4>
+                            <p>生年月日の数字があなたの運命を物語る</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: 情報入力 -->
+                <div class="step-content" id="step2">
+                    <h3>あなたの情報を入力してください</h3>
+                    <form id="fortuneForm" class="fortune-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="userName">お名前（ニックネーム可）</label>
+                                <input type="text" id="userName" name="userName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">性別</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">選択してください</option>
+                                    <option value="male">男性</option>
+                                    <option value="female">女性</option>
+                                    <option value="other">その他</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="birthYear">生年月日</label>
+                                <div class="birth-date">
+                                    <select id="birthYear" name="birthYear" required>
+                                        <option value="">年</option>
+                                    </select>
+                                    <select id="birthMonth" name="birthMonth" required>
+                                        <option value="">月</option>
+                                    </select>
+                                    <select id="birthDay" name="birthDay" required>
+                                        <option value="">日</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question">占いたい内容を選択してください</label>
+                            <select id="question" name="question" required>
+                                <option value="">選択してください</option>
+                                <option value="love">恋愛運・恋愛相談</option>
+                                <option value="work">仕事運・キャリア</option>
+                                <option value="health">健康運・体調</option>
+                                <option value="money">金運・財運</option>
+                                <option value="general">総合運</option>
+                                <option value="future">将来・未来</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specificQuestion">具体的な質問（任意）</label>
+                            <textarea id="specificQuestion" name="specificQuestion" rows="3" placeholder="より詳しい占い結果を得たい場合は、具体的な質問をお書きください"></textarea>
+                        </div>
+
+                        <div class="step-buttons">
+                            <button type="button" class="btn btn-secondary" onclick="goToStep(1)">戻る</button>
+                            <button type="button" class="btn btn-primary" onclick="startDiagnosis()">診断開始</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 3: 結果表示 -->
+                <div class="step-content" id="step3">
+                    <div class="diagnosis-loading" id="loadingScreen">
+                        <div class="loading-animation">
+                            <div class="crystal-loading">
+                                <i class="fas fa-crystal-ball"></i>
+                            </div>
+                            <h3>あなたの運勢を占っています...</h3>
+                            <div class="loading-progress">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <p class="loading-text">星の配置を読み解いています</p>
+                        </div>
+                    </div>
+
+                    <div class="diagnosis-result hidden" id="resultScreen">
+                        <div class="result-header">
+                            <div class="result-icon">
+                                <i class="fas fa-star-of-life"></i>
+                            </div>
+                            <h3>あなたの占い結果</h3>
+                            <div class="result-user-info">
+                                <span id="resultName">○○様</span>の
+                                <span id="resultFortuneType">○○占い</span>
+                            </div>
+                        </div>
+                        
+                        <div class="result-content">
+                            <div class="overall-score">
+                                <div class="score-circle">
+                                    <div class="score-value" id="overallScore">85</div>
+                                    <div class="score-label">総合運</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detailed-results">
+                                <div class="result-category">
+                                    <div class="category-header">
+                                        <i class="fas fa-heart category-icon love"></i>
+                                        <span class="category-name">恋愛運</span>
+                                        <div class="category-score" id="loveScore">★★★★☆</div>
+                                    </div>
+                                    <p class="category-description" id="loveDescription">
+                                        恋愛運は上昇傾向にあります。新しい出会いや既存の関係の発展が期待できる時期です。
+                                    </p>
+                                </div>
+
+                                <div class="result-category">
+                                    <div class="category-header">
+                                        <i class="fas fa-briefcase category-icon work"></i>
+                                        <span class="category-name">仕事運</span>
+                                        <div class="category-score" id="workScore">★★★☆☆</div>
+                                    </div>
+                                    <p class="category-description" id="workDescription">
+                                        仕事面では慎重さが求められる時期。計画的に物事を進めることで成功につながります。
+                                    </p>
+                                </div>
+
+                                <div class="result-category">
+                                    <div class="category-header">
+                                        <i class="fas fa-coins category-icon money"></i>
+                                        <span class="category-name">金運</span>
+                                        <div class="category-score" id="moneyScore">★★★★★</div>
+                                    </div>
+                                    <p class="category-description" id="moneyDescription">
+                                        金運は絶好調！投資や新しいビジネスチャンスに恵まれる可能性があります。
+                                    </p>
+                                </div>
+
+                                <div class="result-category">
+                                    <div class="category-header">
+                                        <i class="fas fa-seedling category-icon health"></i>
+                                        <span class="category-name">健康運</span>
+                                        <div class="category-score" id="healthScore">★★★★☆</div>
+                                    </div>
+                                    <p class="category-description" id="healthDescription">
+                                        健康面は安定しています。規則正しい生活を心がけることでさらに向上するでしょう。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="fortune-message">
+                                <h4>今日のラッキーメッセージ</h4>
+                                <div class="lucky-message" id="luckyMessage">
+                                    今日のあなたは特別な輝きを持っています。自分を信じて前進することで、素晴らしい運命が開けるでしょう。
+                                </div>
+                                <div class="lucky-items">
+                                    <div class="lucky-item">
+                                        <span class="label">ラッキーカラー:</span>
+                                        <span class="value" id="luckyColor">ピンク</span>
+                                    </div>
+                                    <div class="lucky-item">
+                                        <span class="label">ラッキーナンバー:</span>
+                                        <span class="value" id="luckyNumber">7</span>
+                                    </div>
+                                    <div class="lucky-item">
+                                        <span class="label">ラッキーアイテム:</span>
+                                        <span class="value" id="luckyItem">小さな鏡</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="result-actions">
+                            <button class="btn btn-primary" onclick="shareResult()">
+                                <i class="fas fa-share-alt"></i> 結果をシェア
+                            </button>
+                            <button class="btn btn-secondary" onclick="restartDiagnosis()">
+                                <i class="fas fa-redo"></i> もう一度占う
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About</h2>
+                <p class="section-subtitle">パブリックスタンド運営の本格占いサービス</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>信頼できる無料オンライン占い</h3>
+                    <p>
+                        私たちパブリックスタンドは、多くの方に占いを通じて人生の指針を見つけていただきたいという想いから、
+                        本格的なオンライン占い診断サービスを開始しました。完全無料でありながら、
+                        経験豊富な占い師の監修による本格的な占い結果をお届けします。
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-gift"></i>
+                            <div>
+                                <h4>完全無料</h4>
+                                <p>登録不要・課金なしで本格占い診断</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-user-secret"></i>
+                            <div>
+                                <h4>プライバシー保護</h4>
+                                <p>個人情報は一切保存せず安心・安全</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>いつでもどこでも</h4>
+                                <p>スマホ・PCから24時間いつでも利用可能</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">占い一覧</h2>
+                <p class="section-subtitle">選べる4種類の占い診断</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cards-blank"></i>
+                    </div>
+                    <h3>タロット占い</h3>
+                    <p>神秘的なタロットカードがあなたの運命を導きます。恋愛・仕事・未来について詳しく占います。</p>
+                    <div class="features-list">
+                        <div class="feature-item">✓ 恋愛運詳細診断</div>
+                        <div class="feature-item">✓ 仕事・キャリア運</div>
+                        <div class="feature-item">✓ 未来予測</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <h3>手相占い</h3>
+                    <p>生年月日から読み解く手相占い。あなたの運命線、生命線、感情線から人生の道筋を占います。</p>
+                    <div class="features-list">
+                        <div class="feature-item">✓ 運命線診断</div>
+                        <div class="feature-item">✓ 生命線・健康運</div>
+                        <div class="feature-item">✓ 感情線・恋愛運</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>星座占い</h3>
+                    <p>西洋占星術に基づく本格的な星座占い。生年月日から星座と惑星の配置を分析します。</p>
+                    <div class="features-list">
+                        <div class="feature-item">✓ 12星座別運勢</div>
+                        <div class="feature-item">✓ 惑星配置分析</div>
+                        <div class="feature-item">✓ 相性診断</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>数秘術</h3>
+                    <p>生年月日の数字から運命数を算出。数字が持つ神秘的な力であなたの本質を占います。</p>
+                    <div class="features-list">
+                        <div class="feature-item">✓ 運命数算出</div>
+                        <div class="feature-item">✓ 性格・才能診断</div>
+                        <div class="feature-item">✓ 人生サイクル</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">利用者の声</h2>
+                <p class="section-subtitle">実際にご利用いただいた方からの評価</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>「無料とは思えないほど詳しい占い結果でした！恋愛運のアドバイス通りに行動したら、本当に良い出会いがありました。」</p>
+                    <div class="customer">
+                        <strong>A.Sさん (20代女性)</strong>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>「仕事で悩んでいた時に利用しました。数秘術の結果が的確で、転職のタイミングがよく分かりました。感謝しています！」</p>
+                    <div class="customer">
+                        <strong>T.Kさん (30代男性)</strong>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>「スマホから簡単に診断できるのが良いですね。毎月利用して運勢チェックしています。当たる確率が高くて驚いています。」</p>
+                    <div class="customer">
+                        <strong>M.Yさん (40代女性)</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">お問い合わせ</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>運営会社情報</h3>
+                    <div class="info-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <strong>会社名</strong>
+                            <p>パブリックスタンド株式会社</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>info@publicstand-fortune.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>サポート時間</strong>
+                            <p>平日 10:00〜18:00</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>プライバシー</strong>
+                            <p>個人情報は一切保存されません</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>お問い合わせフォーム</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">お名前</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">メールアドレス</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiryType">お問い合わせ種別</label>
+                            <select id="inquiryType" name="inquiryType" required>
+                                <option value="">選択してください</option>
+                                <option value="technical">技術的な問題</option>
+                                <option value="result">占い結果について</option>
+                                <option value="cooperation">提携・協力について</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">お問い合わせ内容</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">送信</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-crystal-ball"></i>
+                    <span>Public Stand Fortune</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#diagnosis">無料診断</a>
+                    <a href="#services">占い一覧</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Public Stand Fortune. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/online-fortune-script.js"></script>
+</body>
+</html>

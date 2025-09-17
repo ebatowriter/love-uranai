@@ -1,0 +1,1061 @@
+<!-- WordPress カスタムHTML用 - パブリックスタンド＋占いサービス ペライチLP -->
+<!-- ベースカラー: #eb3474 -->
+
+<style>
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #eb3474;
+    --primary-light: #ff6b9d;
+    --primary-dark: #c41e3a;
+    --secondary-color: #2c1810;
+    --accent-gold: #ffd700;
+    --text-dark: #333;
+    --text-light: #666;
+    --background-light: #fafafa;
+    --background-dark: #1a1a1a;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(235, 52, 116, 0.3);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.mystic-pub-lp {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.mystic-pub-lp .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+.mystic-pub-lp .header {
+    position: relative;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    margin-bottom: 0;
+}
+
+.mystic-pub-lp .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mystic-pub-lp .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.mystic-pub-lp .logo i {
+    font-size: 1.8rem;
+}
+
+.mystic-pub-lp .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+}
+
+.mystic-pub-lp .nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.mystic-pub-lp .nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.mystic-pub-lp .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mystic-pub-lp .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.mystic-pub-lp .hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.mystic-pub-lp .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="1"/></g></svg>');
+    animation: sparkle 20s linear infinite;
+}
+
+@keyframes sparkle {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-60px) rotate(360deg); }
+}
+
+.mystic-pub-lp .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.mystic-pub-lp .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.mystic-pub-lp .title-main {
+    display: block;
+    font-size: 3.5rem;
+}
+
+.mystic-pub-lp .title-sub {
+    display: block;
+    font-size: 2rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+.mystic-pub-lp .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.mystic-pub-lp .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.mystic-pub-lp .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.mystic-pub-lp .btn-primary {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border-color: var(--white);
+}
+
+.mystic-pub-lp .btn-primary:hover {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+    transform: translateY(-2px);
+}
+
+.mystic-pub-lp .btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.mystic-pub-lp .btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Graphic */
+.mystic-pub-lp .hero-graphic {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.mystic-pub-lp .crystal-ball {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+    border-radius: 50%;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.mystic-pub-lp .crystal-shine {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Section Styles */
+.mystic-pub-lp section {
+    padding: 5rem 0;
+}
+
+.mystic-pub-lp .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.mystic-pub-lp .section-title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.mystic-pub-lp .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    border-radius: 2px;
+}
+
+.mystic-pub-lp .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+/* About Section */
+.mystic-pub-lp .about {
+    background-color: var(--background-light);
+}
+
+.mystic-pub-lp .about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mystic-pub-lp .about-text h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.mystic-pub-lp .about-text > p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.mystic-pub-lp .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.mystic-pub-lp .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.mystic-pub-lp .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.mystic-pub-lp .feature i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    min-width: 60px;
+}
+
+.mystic-pub-lp .feature h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Services Section */
+.mystic-pub-lp .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.mystic-pub-lp .service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.mystic-pub-lp .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.mystic-pub-lp .service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.mystic-pub-lp .service-icon i {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.mystic-pub-lp .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.mystic-pub-lp .service-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.mystic-pub-lp .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: var(--background-light);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.mystic-pub-lp .service-note {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+}
+
+/* Menu Section */
+.mystic-pub-lp .menu {
+    background-color: var(--background-light);
+}
+
+.mystic-pub-lp .menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.mystic-pub-lp .tab-btn {
+    padding: 1rem 2rem;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.mystic-pub-lp .tab-btn.active,
+.mystic-pub-lp .tab-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.mystic-pub-lp .tab-panel {
+    display: none;
+}
+
+.mystic-pub-lp .tab-panel.active {
+    display: block;
+}
+
+.mystic-pub-lp .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.mystic-pub-lp .menu-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.mystic-pub-lp .menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.mystic-pub-lp .menu-item h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.mystic-pub-lp .menu-item p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.mystic-pub-lp .menu-item .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Contact Section */
+.mystic-pub-lp .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mystic-pub-lp .contact-info h3,
+.mystic-pub-lp .contact-form h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.mystic-pub-lp .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.mystic-pub-lp .info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 0.2rem;
+    min-width: 25px;
+}
+
+.mystic-pub-lp .contact-form {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.mystic-pub-lp .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.mystic-pub-lp .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.mystic-pub-lp .form-group input,
+.mystic-pub-lp .form-group select,
+.mystic-pub-lp .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e1e1;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.mystic-pub-lp .form-group input:focus,
+.mystic-pub-lp .form-group select:focus,
+.mystic-pub-lp .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(235, 52, 116, 0.1);
+}
+
+/* Footer */
+.mystic-pub-lp .footer {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+.mystic-pub-lp .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.mystic-pub-lp .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.mystic-pub-lp .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mystic-pub-lp .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .mystic-pub-lp .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .mystic-pub-lp .title-main {
+        font-size: 2.5rem;
+    }
+
+    .mystic-pub-lp .title-sub {
+        font-size: 1.5rem;
+    }
+
+    .mystic-pub-lp .section-title {
+        font-size: 2.5rem;
+    }
+
+    .mystic-pub-lp .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .mystic-pub-lp .nav-menu {
+        display: none;
+    }
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="mystic-pub-lp">
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-star"></i>
+                    <span>Mystic Pub Stand</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Service</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-main">心と体を癒す</span>
+                    <span class="title-sub">新感覚パブリックスタンド</span>
+                </h1>
+                <p class="hero-description">
+                    美味しいお酒と料理を楽しみながら、<br>
+                    当たると評判の占いで未来への道筋を見つけませんか？
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">サービス詳細</a>
+                    <a href="#contact" class="btn btn-secondary">ご予約・お問い合わせ</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <div class="crystal-ball">
+                        <div class="crystal-shine"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">パブリックスタンドと占いの融合</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>新しいスタイルの癒し空間</h3>
+                    <p>
+                        私たちは、従来の飲食店の概念を覆す新しいスタイルのパブリックスタンドです。
+                        美味しいお酒と料理を楽しみながら、プロの占い師による本格的な占いサービスを受けることができます。
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <h4>こだわりの料理</h4>
+                                <p>厳選した食材を使った美味しい料理をご提供</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wine-glass"></i>
+                            <div>
+                                <h4>豊富なドリンク</h4>
+                                <p>カクテルから日本酒まで幅広いラインナップ</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-crystal-ball"></i>
+                            <div>
+                                <h4>本格占い</h4>
+                                <p>経験豊富な占い師による的確なアドバイス</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">お楽しみいただけるサービス</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tarot"></i>
+                    </div>
+                    <h3>タロット占い</h3>
+                    <p>78枚のカードが示すメッセージから、あなたの運勢と未来への道筋をお教えします。</p>
+                    <div class="price">¥3,000〜</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <h3>手相占い</h3>
+                    <p>あなたの手のひらに刻まれた運命の線から、恋愛、仕事、健康運を詳しく鑑定します。</p>
+                    <div class="price">¥2,500〜</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-yin-yang"></i>
+                    </div>
+                    <h3>四柱推命</h3>
+                    <p>生年月日から導く本格的な運命鑑定。人生の転機や重要な決断のサポートをします。</p>
+                    <div class="price">¥4,000〜</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>水晶占い</h3>
+                    <p>神秘的な水晶玉を通して、隠された真実や未来の可能性を読み解きます。</p>
+                    <div class="price">¥3,500〜</div>
+                </div>
+            </div>
+            <div class="service-note">
+                <p><i class="fas fa-info-circle"></i> 占い料金にはワンドリンク付き。お食事との組み合わせも可能です。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Menu</h2>
+                <p class="section-subtitle">心を込めた料理とドリンク</p>
+            </div>
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-tab="food">フード</button>
+                <button class="tab-btn" data-tab="drink">ドリンク</button>
+                <button class="tab-btn" data-tab="set">セットメニュー</button>
+            </div>
+            <div class="menu-content">
+                <div class="tab-panel active" id="food">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>運気上昇！幸せのから揚げ</h4>
+                            <p>特製スパイスで味付けした自慢のから揚げ</p>
+                            <span class="price">¥880</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>恋愛運アップ♡ハートのピザ</h4>
+                            <p>ハート型にカットした特製マルゲリータピザ</p>
+                            <span class="price">¥1,200</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>金運招来！黄金のパスタ</h4>
+                            <p>ウニとイクラをたっぷり使った贅沢パスタ</p>
+                            <span class="price">¥1,580</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>健康運の青い野菜サラダ</h4>
+                            <p>新鮮野菜と自家製ドレッシングのヘルシーサラダ</p>
+                            <span class="price">¥680</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="drink">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>神秘的なブルームーンカクテル</h4>
+                            <p>月の神秘を表現した美しいブルーのカクテル</p>
+                            <span class="price">¥780</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>情熱の赤ワイン</h4>
+                            <p>恋愛運を高める厳選された赤ワイン</p>
+                            <span class="price">¥680〜</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>幸運の四つ葉クローバー茶</h4>
+                            <p>ノンアルコールのハーブティー</p>
+                            <span class="price">¥480</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>星座ビール</h4>
+                            <p>12星座をイメージした季節のクラフトビール</p>
+                            <span class="price">¥580</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="set">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>占い師おすすめセット</h4>
+                            <p>タロット占い + お好きなドリンク + おつまみ</p>
+                            <span class="price">¥3,800</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>運気アップディナーセット</h4>
+                            <p>手相占い + メイン料理 + ドリンク2杯</p>
+                            <span class="price">¥4,500</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>恋愛成就スペシャル</h4>
+                            <p>恋愛占い + ハートピザ + 赤ワイン</p>
+                            <span class="price">¥3,200</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">ご予約・お問い合わせ</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>店舗情報</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>住所</strong>
+                            <p>〒xxx-xxxx 東京都渋谷区xxx-x-x</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>電話番号</strong>
+                            <p>03-xxxx-xxxx</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>営業時間</strong>
+                            <p>18:00〜26:00（L.O. 25:30）<br>定休日：月曜日</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>info@mysticpub.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>ご予約フォーム</h3>
+                    <form id="reservationForm">
+                        <div class="form-group">
+                            <label for="name">お名前</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">メールアドレス</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">電話番号</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">ご希望日時</label>
+                            <input type="datetime-local" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="people">人数</label>
+                            <select id="people" name="people" required>
+                                <option value="">選択してください</option>
+                                <option value="1">1名</option>
+                                <option value="2">2名</option>
+                                <option value="3">3名</option>
+                                <option value="4">4名</option>
+                                <option value="5">5名以上</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">占いサービス</label>
+                            <select id="service" name="service">
+                                <option value="">選択してください（任意）</option>
+                                <option value="tarot">タロット占い</option>
+                                <option value="palm">手相占い</option>
+                                <option value="shicyu">四柱推命</option>
+                                <option value="crystal">水晶占い</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">ご要望・メッセージ</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">予約を送信</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-star"></i>
+                    <span>Mystic Pub Stand</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mystic Pub Stand. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+// メニュータブ切り替え機能
+document.addEventListener('DOMContentLoaded', function() {
+    const tabBtns = document.querySelectorAll('.mystic-pub-lp .tab-btn');
+    const tabPanels = document.querySelectorAll('.mystic-pub-lp .tab-panel');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // 全てのタブボタンとパネルから active クラスを削除
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanels.forEach(p => p.classList.remove('active'));
+            
+            // クリックされたボタンと対応するパネルに active クラスを追加
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+
+// スムーススクロール
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.mystic-pub-lp a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
+            
+            if (target) {
+                e.preventDefault();
+                const targetPosition = target.offsetTop - 80;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+// フォーム機能
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('reservationForm');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // バリデーション
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const people = document.getElementById('people').value;
+            
+            let isValid = true;
+            let errorMessage = '';
+            
+            if (!name) {
+                errorMessage += 'お名前を入力してください。\n';
+                isValid = false;
+            }
+            
+            if (!email) {
+                errorMessage += 'メールアドレスを入力してください。\n';
+                isValid = false;
+            } else if (!isValidEmail(email)) {
+                errorMessage += '正しいメールアドレスを入力してください。\n';
+                isValid = false;
+            }
+            
+            if (!phone) {
+                errorMessage += '電話番号を入力してください。\n';
+                isValid = false;
+            }
+            
+            if (!date) {
+                errorMessage += 'ご希望日時を選択してください。\n';
+                isValid = false;
+            }
+            
+            if (!people) {
+                errorMessage += '人数を選択してください。\n';
+                isValid = false;
+            }
+            
+            if (!isValid) {
+                alert(errorMessage);
+                return;
+            }
+            
+            // 成功メッセージ
+            alert('ご予約ありがとうございます！\nお客様のご予約を受け付けました。\n確認のご連絡をいたしますので、しばらくお待ちください。');
+            form.reset();
+        });
+    }
+});
+
+// メールアドレスバリデーション
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+</script>
